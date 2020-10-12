@@ -9,14 +9,14 @@ import com.monumapp.api.models.Monument;
 import com.monumapp.api.repositories.MonumentRepository;
 
 @Service
-public class SearchMonumentByNameService {
+public class ListAllMonumentsService {
 	@Autowired
 	private MonumentRepository monumentRepository;
 	
-	public List<Monument> execute(String name) throws Exception {
+	public List<Monument> execute() throws Exception {
 		
-		List<Monument> monument = monumentRepository.findByNameLike(name);
+		List<Monument> monuments = monumentRepository.findAll();
 		
-		return monument;
+		return monuments;
 	}
 }
